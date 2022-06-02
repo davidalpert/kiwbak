@@ -1,0 +1,34 @@
+<div class="page-header">
+  <%= link_to orders_path, class: 'btn btn-default' do %>
+    All Orders
+  <% end %>
+  <%= link_to edit_order_path(@order), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show order</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>First name:</dt>
+  <dd><%= @order.first_name %></dd>
+  <dt>Last name:</dt>
+  <dd><%= @order.last_name %></dd>
+  <dt>Email:</dt>
+  <dd><%= @order.email %></dd>
+  <dt>Cell phone:</dt>
+  <dd><%= @order.cell_phone %></dd>
+  <dt>Home phone:</dt>
+  <dd><%= @order.home_phone %></dd>
+  <dt>Heard how:</dt>
+  <dd><%= @order.heard_how %></dd>
+  <dt>Afac boxes:</dt>
+  <dd><%= @order.afac_boxes %></dd>
+  <dt>Self boxes:</dt>
+  <dd><%= @order.self_boxes %></dd>
+  <dt>Fulfilled:</dt>
+  <dd><%= @order.fulfilled %></dd>
+  <dt>Has paid:</dt>
+  <dd><%= @order.has_paid %></dd>
+  <dt>Comments:</dt>
+  <dd><%= @order.comments %></dd>
+</dl>

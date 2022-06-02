@@ -1,0 +1,84 @@
+<%= form_with(model: order) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :first_name, class: 'form-label' %>
+      <%= form.text_field :first_name, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :last_name, class: 'form-label' %>
+      <%= form.text_field :last_name, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :email, class: 'form-label' %>
+      <%= form.text_field :email, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :cell_phone, class: 'form-label' %>
+      <%= form.text_field :cell_phone, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :home_phone, class: 'form-label' %>
+      <%= form.text_field :home_phone, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :heard_how, class: 'form-label' %>
+      <%= form.text_field :heard_how, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :afac_boxes, class: 'form-label' %>
+      <%= form.number_field :afac_boxes, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :self_boxes, class: 'form-label' %>
+      <%= form.number_field :self_boxes, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :fulfilled, class: 'form-label' %>
+      <%= form.check_box :fulfilled, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :has_paid, class: 'form-label' %>
+      <%= form.check_box :has_paid, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :comments, class: 'form-label' %>
+      <%= form.text_area :comments, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <% if order.persisted? %>
+      <div class="float-end">
+        <%= link_to 'Destroy', order, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if order.persisted? %>
+      <%= link_to "Cancel", order, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", orders_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>
